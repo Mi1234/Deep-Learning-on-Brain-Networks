@@ -1,6 +1,5 @@
 import sys, os
-# sys.path.insert(0, '..')
-sys.path.insert(0,'/home/miranda/Code/cnn_graph/lib')
+sys.path.insert(0, '..')
 import graph
 
 import tensorflow as tf
