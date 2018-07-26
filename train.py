@@ -1,7 +1,5 @@
 import sys, os
-# sys.path.insert(0, '..')
-sys.path.insert(0,'/home/miranda/Code/cnn_graph/lib')
-# import models_cnn as models
+sys.path.insert(0, '..')
 import models
 import graph, coarsening, utils
 
