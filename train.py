@@ -56,21 +56,12 @@ del A
 # # Data
 
 
-with gzip.open('/home/miranda/Code/aae_deep_decision_neural_network/data/syn_adhd_train_data_quater_scale.pkl.gz', 'rb') as f:  
+with gzip.open('../data/syn_adhd_train_data_quater_scale.pkl.gz', 'rb') as f:  
     X_train = pickle.load(f)
 X = zip(*X_train)[0]
 labels = zip(*X_train)[1]
 X = np.asarray(X)
 y = np.asarray(labels)
-
-# y = []
-# for i in labels:
-#     if i == 0:
-#         y.append([0,1])
-#     else:
-#         y.append([1,0])
-
-# y = np.asarray(y)
 
 train_data = X[0:5000, :]
 train_labels = y[0:5000]
@@ -112,33 +103,6 @@ common['pool']           = 'mpool1'
 C = 2  # number of classes
 
 model_perf = utils.model_perf()
-
-
-# Common hyper-parameters for networks with one convolutional layer.
-# common['dropout']        = 0.7
-# common['learning_rate']  = 0.02
-# common['decay_rate']     = 0.95
-# common['momentum']       = 0.9
-# common['F']              = [20]
-# common['K']              = [20]
-# common['p']              = [1]
-# common['M']              = [C]
-
-
-
-
-# With 'chebyshev2' and 'b2relu', it corresponds to cgcnn2_2(L[0], F=10, K=20).
-# if True:
-#     name = 'cgconv_softmax'
-#     params = common.copy()
-#     params['dir_name'] += name
-#     params['filter'] = 'chebyshev5'
-# #    params['filter'] = 'chebyshev2'
-#     params['brelu'] = 'b2relu'
-#     model_perf.test(models.cgcnn(L, **params), name, params,
-#                     train_data, train_labels, val_data, val_labels, test_data, test_labels)
-
-
 
 
 # Common hyper-parameters for 2 layer convolutional neural networks.
